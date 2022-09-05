@@ -1,0 +1,28 @@
+.info {
+    display: flex;
+    margin-top: 6.5rem;
+    justify-content: space-around;
+    padding: 2rem;
+    background-color: #F5F5F5;
+
+    &__cont {
+        &__title {
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        @media (max-width: 950px) {
+            margin-bottom: 1.5rem;
+
+            &__title {
+                font-size: .9rem;
+            }
+        }
+    }
+
+    @media (max-width: 950px) {
+        flex-direction: column;
+        padding-bottom: 0;
+    }
+}
+
