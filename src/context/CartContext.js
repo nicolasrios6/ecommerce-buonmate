@@ -10,8 +10,15 @@ const CartProvider = ({children}) => {
         getTotalPrice()
     }, [cartListItems])
 
+    const getTotalPrice = () => {
+        let total = 0
+        cartListItems.forEach(prod => {
+            total += prod.cantidad * prod.price
+        })
+        setTotalPrice(total)
+    }
+
     const addProductToCart = (product) => {
-        console.log('Se agregó el producto: ', product)
         let isInCart = cartListItems.find(cartItem => cartItem.id === product.id)
         if(!isInCart) {
             setCartListItems(cartListItems => [...cartListItems , product])
@@ -23,13 +30,6 @@ const CartProvider = ({children}) => {
         setCartListItems(auxCart)
     }
 
-    const getTotalPrice = () => {
-        let total = 0
-        cartListItems.forEach(prod => {
-            total += prod.cantidad * prod.price
-        })
-        setTotalPrice(total)
-    }
 
     const cleanCartProducts = () => {
         setCartListItems([])

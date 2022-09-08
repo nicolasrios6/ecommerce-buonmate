@@ -27,10 +27,6 @@ const ItemDetailContainer = () => {
         return product
     }
 
-    // const productFilter = productos.find((product) => {
-    //     return product.id == id
-    // })
-
     return (
         <>
             <ItemDetail data={product}/>

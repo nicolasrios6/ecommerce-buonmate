@@ -23,6 +23,9 @@ import { Link } from "react-router-dom";
 //---Context---//
 import {useContext} from "react";
 import CartContext from "../../context/CartContext";
+//---Modal---//
+import Modal from "../Modal/Modal";
+import { TextField } from "@mui/material";
 
 const drawerWidth = 240;
 
@@ -51,6 +54,10 @@ const {cartListItems, deleteItem, totalPrice} = useContext(CartContext)
   const handleCartToggle = () => {
     setMobileOpenCart(!mobileOpenCart);
   };
+
+  // --- Contact Form --- //
+
+  const [showModal, setShowModal] = useState(false)
 
   const drawer = (
     <Box sx={{ textAlign: "center" }} className="containerDrawer">
@@ -92,12 +99,42 @@ const {cartListItems, deleteItem, totalPrice} = useContext(CartContext)
           </List>
         </Collapse>
 
-        <Button
-          onClick={handleDrawerToggle}
-          className="containerDrawer__links__btn"
-        >
-          <a href="">Contacto</a>
+        <Button onClick={() => setShowModal(true)} className="containerDrawer__links__btn">
+          <a>Contacto</a>
         </Button>
+        <Modal title={'Formulario de contacto'} open={showModal} handleClose={() => setShowModal(false)}>
+                <form className='form'>
+                  <p className='form__title'>Completa el formulario y en breve nos comunicamos con vos!</p>
+                  <TextField 
+                    id='outlined-basic'
+                    name='name'
+                    label='Nombre y Apellido'
+                    variant='outlined'
+                    className='form__input'
+                    required
+                  />
+
+                  <TextField 
+                    id='outlined-basic'
+                    name='phone'
+                    label='Teléfono'
+                    variant='outlined'
+                    className='form__input'
+                    required
+                  />
+
+                  <TextField 
+                    id='outlined-basic'
+                    name='email'
+                    label='Email'
+                    variant='outlined'
+                    className='form__input'
+                    required
+                  />
+
+                  <button type='submit' className="form__btn">Enviar</button>
+                </form>
+              </Modal>
       </div>
     </Box>
   );
@@ -225,9 +262,43 @@ const {cartListItems, deleteItem, totalPrice} = useContext(CartContext)
                 <Link to={'/products/bombillas'} className='subMenuLinks'><MenuItem onClick={handleClose}>Bombillas</MenuItem></Link>
                 <Link to={'/products/yerbas'} className='subMenuLinks'><MenuItem onClick={handleClose}>Yerbas</MenuItem></Link>
               </Menu>
-              <Button className="containerNav__links__btn">
-                <a href="">Contacto</a>
+              <Button onClick={() => setShowModal(true)} className="containerNav__links__btn">
+                <a>Contacto</a>
               </Button>
+
+              <Modal title={'Formulario de contacto'} open={showModal} handleClose={() => setShowModal(false)}>
+                <form className='form'>
+                  <p className='form__title'>Completa el formulario y en breve nos comunicamos con vos!</p>
+                  <TextField 
+                    id='outlined-basic'
+                    name='name'
+                    label='Nombre y Apellido'
+                    variant='outlined'
+                    className='form__input'
+                    required
+                  />
+
+                  <TextField 
+                    id='outlined-basic'
+                    name='phone'
+                    label='Teléfono'
+                    variant='outlined'
+                    className='form__input'
+                    required
+                  />
+
+                  <TextField 
+                    id='outlined-basic'
+                    name='email'
+                    label='Email'
+                    variant='outlined'
+                    className='form__input'
+                    required
+                  />
+
+                  <button type='submit' className="form__btn">Enviar</button>
+                </form>
+              </Modal>
             </Box>
             <Button
               className="contOpen"
