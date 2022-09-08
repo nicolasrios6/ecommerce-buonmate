@@ -2,7 +2,6 @@
   "name": "react-e",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://nicolasrios6.github.io/ecommerce-buonmate",
   "dependencies": {
     "@emotion/react": "^11.10.0",
     "@emotion/styled": "^11.10.0",
