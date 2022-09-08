@@ -68,7 +68,7 @@ const {cartListItems, deleteItem, totalPrice} = useContext(CartContext)
           onClick={handleDrawerToggle}
           className="containerDrawer__links__btn"
         >
-          <a href="">Home</a>
+          <Link to={'/'}>Home</Link>
         </Button>
         <Button
           className="containerDrawer__links__btn"
