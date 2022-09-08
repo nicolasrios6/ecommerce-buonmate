@@ -25,10 +25,10 @@ const Slider = () => {
                 modules={[Autoplay, Pagination, Navigation]}
                 className='mySwiper'
            >
-                <SwiperSlide className='slide'><img src='slider1.jpeg' alt=''/></SwiperSlide>
-                <SwiperSlide className='slide'><img src='slider2.jpeg' alt=''/></SwiperSlide>
-                <SwiperSlide className='slide'><img src='slider3.jpeg' alt=''/></SwiperSlide>
-                <SwiperSlide className='slide'><img src='slider4.jpeg' alt=''/></SwiperSlide>
+                <SwiperSlide className='slide'><img src='./slider1.jpeg' alt=''/></SwiperSlide>
+                <SwiperSlide className='slide'><img src='./slider2.jpeg' alt=''/></SwiperSlide>
+                <SwiperSlide className='slide'><img src='./slider3.jpeg' alt=''/></SwiperSlide>
+                <SwiperSlide className='slide'><img src='./slider4.jpeg' alt=''/></SwiperSlide>
            </Swiper>
         </>
     )
