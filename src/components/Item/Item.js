@@ -16,8 +16,7 @@ const Item = ({title, price, img, id}) => {
             <CardMedia
             component="img"
             height="400"
-            image={`./${img}`}
-            alt="mate torpedo"
+            image={`/${img}`}
             />
             </Link>
             <CardContent>

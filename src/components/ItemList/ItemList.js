@@ -40,7 +40,6 @@ const ItemList = () => {
     return (
         <Container sx={'xl'} className='itemList'>
             <h3 className='itemList__title'>Productos</h3>
-            {/* {console.log('State products: ', products)} */}
             <div className='itemList__items'>
                 {products.map(({title, price, img, id}) => {
                     return (
