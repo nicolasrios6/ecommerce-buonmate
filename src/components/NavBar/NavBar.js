@@ -224,7 +224,7 @@ const {cartListItems, deleteItem, totalPrice} = useContext(CartContext)
         <Toolbar className="containerNav">
           <div className="containerNav__logo">
             <Link to="/">
-              <img src="/logo.png" alt="logo" />
+              <img src="./logo.png" alt="logo" />
             </Link>
           </div>
 
